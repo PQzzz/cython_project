@@ -11,4 +11,6 @@ cdef extern from "<Rectangle.hpp>" namespace "shapes" nogil:
         void getSize(int32_t width, int32_t height)
         void move(int dx, int dy)
         void dayin()
+        @staticmethod
+        Rectangle* hello()
 

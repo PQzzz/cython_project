@@ -23,5 +23,12 @@ cdef class PyRectangle:
     def getShape(self):
         self.c_rect.getShape()
 
+    @staticmethod
+    def hello():
+        print("in staticmethod")
+        cdef PyRectangle rect = PyRectangle(1,2,3,4)
+        rect.c_rect = Rectangle.hello()
+        return rect
+
     def __dealloc__(self):
         del self.c_rect

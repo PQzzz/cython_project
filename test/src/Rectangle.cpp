@@ -7,14 +7,14 @@ using namespace std;
 
 namespace shapes {
 
-
+    Rectangle* Rectangle::rect = nullptr;
     // Default constructor
     Rectangle::Rectangle () {
         cout << "this is instructor" << endl;
     }
 
     // Overloaded constructor
-    Rectangle::Rectangle (int32_t x0, int32_t y0, int64_t x1, int32_t y1) {
+    Rectangle::Rectangle (int32_t x0, int32_t y0, int32_t x1, int32_t y1) {
         this->x0 = x0;
         this->y0 = y0;
         this->x1 = x1;
@@ -56,6 +56,12 @@ namespace shapes {
 
     void Rectangle::getShape() {
         cout << "this is child reactangle" << endl;
+    }
+
+    Rectangle* Rectangle::hello() {
+        cout << "this is static method" << endl;
+        rect = new Rectangle;
+        return rect;
     }
 
 }
